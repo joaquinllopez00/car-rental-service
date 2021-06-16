@@ -1,8 +1,14 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import { Button } from "./Button"
 import backgroundVideo from "../assets/videos/background.mp4"
+import Aos from "aos"
+import "aos/dist/aos.css"
 const Hero = () => {
+  useEffect(() => {
+    Aos.init()
+  })
+
   return (
     <HeroContainer>
       <HeroBackground>
@@ -17,9 +23,25 @@ const Hero = () => {
       </HeroBackground>
       <HeroContent>
         <HeroItems>
-          <HeroH1>Insane Deals</HeroH1>
-          <HeroP>Let us help you save money</HeroP>
-          <Button primary="true" big="true" round="true" to="/reserve">
+          <HeroH1
+            data-aos="fade-up"
+            data-aos-delay="50"
+            data-aos-duration="800"
+          >
+            Insane Deals
+          </HeroH1>
+          <HeroP data-aos="fade-up" data-aos-delay="50" data-aos-duration="500">
+            Let us help you save money
+          </HeroP>
+          <Button
+            primary="true"
+            big="true"
+            round="true"
+            to="/reserve"
+            data-aos="fade-up"
+            data-aos-delay="50"
+            data-aos-duration="400"
+          >
             Reserve Now
           </Button>
         </HeroItems>

@@ -1,0 +1,26 @@
+[
+  {
+    "img": "../assets/images/car-1.jpg",
+    "alt": "Sedans",
+    "name": "Sedans",
+    "button": "View Options"
+  },
+  {
+    "img": "../assets/images/car-2.jpg",
+    "alt": "Trucks",
+    "name": "Trucks",
+    "button": "View Options"
+  },
+  {
+    "img": "../assets/images/car-3.jpg",
+    "alt": "Vans",
+    "name": "Vans",
+    "button": "View Options"
+  },
+  {
+    "img": "../assets/images/car-4.jpg",
+    "alt": "RV's",
+    "name": "RV's",
+    "button": "View Options"
+  }
+]

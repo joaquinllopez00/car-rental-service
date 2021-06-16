@@ -1,14 +1,24 @@
-import * as React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { FaBars } from "react-icons/fa"
 import { menuData } from "../data/MenuData"
 import { Button } from "./Button"
-const Header = ({ siteTitle }) => {
+const Header = ({ toggle }) => {
+  const [navbar, setNavbar] = useState(false)
+
+  useEffect(() => {
+    if (window.location.pathname) {
+      setNavbar(window.location.pathname)
+    }
+
+    console.log(navbar)
+  }, [])
+
   return (
-    <Nav>
+    <Nav navbar={navbar}>
       <NavLink to="/">CARDEALIO</NavLink>
-      <Bars />
+      <Bars onClick={toggle} />
       <NavMenu>
         {menuData.map((data, idx) => (
           <NavLink to={data.link} key={idx}>
@@ -28,8 +38,8 @@ const Header = ({ siteTitle }) => {
 export default Header
 
 const Nav = styled.nav`
-  background: transparent;
-  height: 80px;
+  background: ${({ navbar }) => (navbar !== "/" ? "#141414" : "transparent")};
+  height: 70px;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1300px) / 2);
